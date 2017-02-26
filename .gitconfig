@@ -1,0 +1,9 @@
+[user]
+	email = drogunov.igor@gmail.com
+	name = ldinc
+
+[color]
+	ui = true
+
+[push]
+	default = current
