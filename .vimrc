@@ -24,7 +24,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
-"Bundle 'reedes/vim-colors-pencil'
+Bundle 'reedes/vim-colors-pencil'
 Bundle 'ntpeters/vim-better-whitespace'
 "Bundle 'jonathanfilip/lucius'
 "Plugin 'flazz/vim-colorschemes'

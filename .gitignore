@@ -1,0 +1,6 @@
+# Ignore any files & folders
+*
+
+# Expect:
+!.gitignore
+!.vimrc
