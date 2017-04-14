@@ -1,4 +1,6 @@
 set nocompatible              " be iMproved, required
+" backspase doesn't work correctly on some distros (like my ubuntu vps ...)
+" set backspace=indent,eol,start
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
