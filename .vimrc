@@ -3,9 +3,18 @@ set nocompatible              " be iMproved, required
 " set backspace=indent,eol,start
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('nvim')
+	call vundle#begin('~/.vim/neobundle/')
+else
+	call vundle#begin()
+endif
+
+" set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -23,17 +32,25 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
 
+if has('nvim')
+	Plugin 'Shougo/deoplete.nvim'
+else
+	Plugin 'Shougo/neocomplete.vim'
+endif
+
 Bundle 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'reedes/vim-colors-pencil'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'airblade/vim-gitgutter'
 "Bundle 'jonathanfilip/lucius'
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'ldinc/vim-ld-theme'
 Plugin 'peterhoeg/vim-qml'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 " Latex/tex
 Plugin 'lervag/vimtex'
@@ -43,6 +60,8 @@ Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
 " Toml
 Plugin 'cespare/vim-toml'
+" Javascript
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,6 +111,7 @@ set shiftwidth=2
 "set expandtab
 
 " golang settings
+let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -101,6 +121,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>i <Plug>(go-info)
@@ -124,5 +145,12 @@ hi IndentGuidesOdd  ctermbg=251
 hi IndentGuidesEven ctermbg=254
 " ===========================
 
-" Neocomplete settings
-let g:neocomplete#enable_at_startup = 1
+" Complete settings
+if has('nvim')
+	let g:deoplete#enable_at_startup = 1
+else
+	let g:neocomplete#enable_at_startup = 1
+endif
+
+" Tagbar settings
+nmap <F8> :TagbarToggle<CR>
