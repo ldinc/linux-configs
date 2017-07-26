@@ -62,6 +62,10 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 " Javascript
 Plugin 'pangloss/vim-javascript'
+Plugin 'flowtype/vim-flow.git'
+
+" async linter
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
