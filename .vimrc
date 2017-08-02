@@ -130,6 +130,12 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>i <Plug>(go-info)
 
+" ale
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+map <leader>at :ALEToggle<CR>
+map <leader>al :ALELint<CR>
+
 " NERD TREE
 autocmd StdinReadPre * let s:std_in=1
 "autostart
