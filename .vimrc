@@ -64,6 +64,9 @@ Plugin 'cespare/vim-toml'
 Plugin 'pangloss/vim-javascript'
 Plugin 'flowtype/vim-flow.git'
 
+" Haxe
+Plugin 'jdonaldson/vaxe'
+
 " async linter
 Plugin 'w0rp/ale'
 
@@ -164,3 +167,6 @@ endif
 
 " Tagbar settings
 nmap <F8> :TagbarToggle<CR>
+
+" auto strip whitespaces
+autocmd BufEnter * EnableStripWhitespaceOnSave
